@@ -1,0 +1,220 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts */
+@font-face {
+    font-family: lemon;
+    src: url(fonts/Lemon/Lemon-Regular.ttf);
+}
+
+/* Variables */
+:root {
+    --white: #ffffff/*#FFEDFA*/;
+    --black: #09122C;
+
+    --blue: #92C4DF/*#4F959D*/;
+    --pink: #F4B6C8;
+    --dark-pink: #e0829d; 
+    --pink-darker: #DE3163;
+
+    --light-green: #CCDF92;
+    --dark-green: #B4D258;
+    --light-blue: #A9B5DF;
+    --dark-blue: #7886C7;
+    --light-orange: #FFC470;
+    --dark-orange: #FF9D23;
+    --light-purple: #A16DA8;
+    --dark-purple: #C9A6CE;
+
+    --ff: lemon;
+    --fs1: .5rem;
+    --fs2: .5rem; 
+    --fs3: 1.2rem;
+    --fs4: 1.6rem; 
+    --fs5: 1rem;
+    --fw1: 300;
+
+    --border-width1: 2px;
+    --border-width2: 4px;
+    --border-width3: 12px;
+    --border-radius1: 5px;
+    --border-radius2: 10px;
+    --border-radius3: 20px;
+
+}
+
+
+/* General */
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--blue);
+    background-image: url(images/background.png);
+    background-size: cover;
+
+    font-family: var(--ff);
+    padding: 50px;
+
+    gap: 30px;
+}
+
+/* Card */ 
+.big-card .flip-card{
+    height: 378px;
+    width: 270px;
+}
+.big-card .flip-card-inner {
+    border: solid var(--white) var(--border-width3);
+    outline: solid var(--black) var(--border-width1);
+    border-radius: var(--border-radius3);
+}
+.small-card .flip-card{
+    height: 126px;
+    width: 90px;
+}
+
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    transition: all 0.1s ease;
+}  
+/*.flip-card:hover {
+    transform: scale(1.1);
+}*/
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+    border: solid var(--white) var(--border-width2);
+    outline: solid var(--black) var(--border-width1);
+    border-radius: var(--border-radius2);
+}  
+.flip-card-back, .flip-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}  
+.flip-card-back {
+    border-radius: var(--border-radius1);
+    background-color: var(--pink);
+    background-image: url(images/card_backgound.png);
+    padding: 10px;
+}
+.flip-card-front {
+    border-radius: var(--border-radius1);
+    padding: 10px;
+    transform: rotateY(-180deg);
+    background-color: var(--pink);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.flip-card-front img {
+    max-height: 80%;
+    max-width: 80%;
+    aspect-ratio: initial !important;
+}
+.small-card .flip-card-front h2 {
+    font-size: var(--fs2);
+    color: var(--white) !important;
+}
+.big-card .flip-card-front h2 {
+    font-size: var(--fs4);
+    color: var(--white) !important;
+}
+.small-card .flip-card-front h3 {
+    font-size: var(--fs1);
+    color: var(--dark-pink) !important;
+}
+.big-card .flip-card-front h3 {
+    font-size: var(--fs3);
+    color: var(--dark-pink) !important;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*border: solid  var(--border-width1) var(--black);
+    border-radius: var(--border-radius2);*/
+    margin-bottom: 20px;    
+    gap: 10px;
+
+}
+.container h2 {
+    font-size: var(--fs5);
+    color: var(--back);
+    font-weight: var(--fw1);
+}
+.card-container {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.button {
+    background-color: var(--pink-darker);
+    color: var(--white);
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-family: var(--ff);
+    font-size: var(--fs3);
+    border: none;
+    transition: all 0.1s ease-in-out;
+}
+
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+/*Progress Bar*/
+
+.big-line {
+    height: 25px;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    background-color: var(--pink-darker);
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.light-line {
+    height: 13px;
+    width: 0%;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--white);
+}
+@keyframes progress-animation {
+    0% {width: 0%;}
+    100% {width: 100%;}
+} 

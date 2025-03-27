@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Il était une fois</title>
+</head>
+<body>
+    <img src="images/banner.png" style="width: 350px;">
+    <div class="container">
+        <div class="card-container" id="big-cards-container"></div>
+    </div>
+    <c-progress-bar id="interval-progress-bar" style="visibility:hidden;"></c-progress-bar>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 80px">
+        <div class="container">
+            <h2>Situation initiale</h2>
+            <div class="card-container" id="situation-initiale"></div>
+        </div> 
+        <div class="container">
+            <h2>Péripéties</h2>
+            <div class="card-container" id="peripeties"></div>
+        </div>
+    </div>
+
+    
+    <button class="button" style="z-index: 2;
+    position: fixed;
+    top:80%;
+    " id="play" onclick="startGame()"
+>C'est parti !</button>
+    <button class="button" id="end-button" style="display: none;" onclick="window.location.reload();">Nouvelle partie</button>
+    
+    <div id="ecran-accueil" class="modal" 
+    style="width: 100%; 
+        display: block;
+        height: 100%; 
+        background-image: url(images/home_background.png);     
+        background-size: cover;
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+    "></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
