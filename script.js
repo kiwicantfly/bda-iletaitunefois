@@ -15,7 +15,7 @@ const initialTypes = ["Personnage", "Lieu", "Contexte"];
 const personnageOrObjet = ["Personnage", "Objet"];
 const peripetiesTypes = [personnageOrObjet[getRandomInt(2)], "Événement", "Personnage", "Événement", personnageOrObjet[getRandomInt(2)], "Événement"];
 const numberOfPeripetiesCards = peripetiesTypes.length;
-const totalTime = 12000;//120000;
+const totalTime = 120000;
 const flipAnimationTime = 400;
 const interval = totalTime/(numberOfPeripetiesCards + 1);
 
