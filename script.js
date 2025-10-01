@@ -11,61 +11,55 @@ const homeScreen = document.getElementById("ecran-accueil");
 
 const numberOfInitialCards = 3;
 const initialTypes = ["Personnage", "Lieu", "Contexte"];
-const numberOfPeripetiesCards = 7;
 
 const personnageOrObjet = ["Personnage", "Objet"];
-const peripetiesTypes = [personnageOrObjet[getRandomInt(2)], "Événement", personnageOrObjet[getRandomInt(2)], "Événement", personnageOrObjet[getRandomInt(2)], "Événement", personnageOrObjet[getRandomInt(2)]];
-const totalTime = 120000;
+const peripetiesTypes = [personnageOrObjet[getRandomInt(2)], "Événement", "Personnage", "Événement", personnageOrObjet[getRandomInt(2)], "Événement"];
+const numberOfPeripetiesCards = peripetiesTypes.length;
+const totalTime = 12000;//120000;
 const flipAnimationTime = 400;
 const interval = totalTime/(numberOfPeripetiesCards + 1);
 
 
 const allCards = {
     "Personnage":[
+        ["Elon Musk", "elon.png"],
+        ["Emmanuel Macron", "macron.png"],
+        ["Mimi Mathy", "mimimathy.png"],
+        ["Pape Léon XIV", "pape.png"],
+        ["Squeezie", "squeezie.png"],
+        ["Taylor Swift", "taylor.png"],
         ["Alien", "alien.png"],
-        ["Boris", "boris.png"],
         ["Canard", "canard.png"],
         ["Génie", "genie.png"],
         ["Clochette", "clochette.png"],
-        ["M. LePen", "marine.png"],
         ["Père Noël", "perenoel.png"],
         ["Sorcier", "sorcier.png"],
-        ["Youyou", "youyou.png"],
         ["Shrek", "shrek.png"],
         ["Dragon", "dragon.png"],
-        ["Truche", "truche.png"],
-        ["Trump", "trump.png"],
-        ["Monfrini", "monfrini.jpeg"],
         ["SpiderMan", "spiderman.png"],
-        ["Lola", "lola.jpg"],
-        ["Ithar", "ithar.jpg"],
-        ["Wassim", "wassim.jpg"]
-
     ],
     "Lieu":[
+        ["Piscine", "piscine.webp"],
         ["Aéroport", 'aeroport.jpeg'],
         ["Zone 51", 'area51.png'],
         ["Forêt", 'foret.avif'],
         ["ISS", 'iss.png'],
-        ["Amphi Étoile", "amphietoile.png"],
-        ["Bras de Fer", "brasdefer.png"],
-        ["Foyer", "foyer.png"],
         ["Maison hantée", "hauntedhouse.png"],
-        ["INT", "int.png"],
         ["Lune", "lune.png"],
         ["Mont Saint Michel", "montsaintmichel.png"],
         ["Musée", "musee.png"],
         ["Océan", "ocean.png"],
         ["Plage", "plage.png"],
         ["RER D", "rerd.png"],
-        ["Bloqué dans l'ascenseur du U7", "ascenseur.png"],
         ["Chocolaterie", "chocolaterie.png"],
         ["Aux toilettes", "toilettes.png"]
 
     ],
     "Contexte":[
+        ["En train de lire", "lire.jpeg"],
+        ["En train de manger", 'manger.webp'],
+        ["En randonnée", 'rando.jpeg'],
         ["En train de dormir", 'dormir.png'],
-        ["Passe le CF2  de java", 'java.png'],
         ["Fait des courses", "courses.png"],
         ["Passe un entretien d'embauche", "embauche.png"],
         ["En train de boire un verre", "verre.png"],
@@ -76,7 +70,7 @@ const allCards = {
         ["En train de danser", "danse.png"],
         ["Joue à Flappy Bird", "flappy.png"],
         ["En plein Covid", "virus.png"],
-        ["Devant la télé", "tele.png"],
+        ["Regarde la télé", "tele.png"],
         ["Il y a eu un meurtre", "meutre.png"],
         ["Fait un TikTok", "tiktok.png"]
 
@@ -89,12 +83,17 @@ const allCards = {
         ["Couteau", "couteau.png"],
         ["Fouet", "fouet.png"],
         ["Gun", "gun.png"],
-        ["Gaffeur", "gaffeur.png"],
         ["Poêle", "poele.png"],
-        ["Poly d'ICRA", "polyicra.png"],
         ["Rouge à lèvres", "rougealevre.png"],
-        ["Boudin", "boudin.jpg"],
-        ["Bidon d'essence", "bidon.png"]
+        ["Boudin", "boudin.png"],
+        ["Bidon d'essence", "bidon.png"],
+        ["Trompette", "trompette.png"],
+        ["Extincteur", "extincteur.png"],
+        ["Pierre philosophale", "philosophale.png"],
+        ["Anneau magique", "anneau.png"], 
+        ["Boussole", "boussole.png"],
+        ["Une paire de bottes", "bottes.png"]
+
     ],  
     "Événement":[
         ["Il/Elle meurt", 'meurt.png'],
@@ -111,7 +110,6 @@ const allCards = {
         ["Le temps s'arrête", "temps.jpg"],
         ["Ce n'était qu'un rêve", "reve.png"],
         ["Anniversaire surprise", "anniversaire.png"],
-        ["Demain il y a CF2 de java", "java.png"],
         ["Se transforme en grenouille", "grenouille.png"],
         ["La pluie se met à tomber", "pluie.png"],
         ["Il y a un gros bruit", "bruit.png"]
